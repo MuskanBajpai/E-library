@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects  E-Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f4e6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #e5d9c5;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        header a:hover, header a.active {
+            background-color: #0074cc;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fffbfb;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .container .subjects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .container .subjects ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container .subjects ul li {
+            margin-bottom: 5px;
+        }
+
+        .container .subjects ul li a {
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .container .subjects ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px 0;
+            text-align: center;
+            background-color: #f4f4ec;
+            color: #666;
+            font-size: 0.8em;
+        }
+
+        footer a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Dropdown menu styles */
+        .menu {
+            position: relative;
+            display: inline-block;
+        }
+        .menu .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            z-index: 10;
+        }
+        .menu .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .menu .dropdown a:hover {
+            background-color: #f4f4f4;
+        }
+        .menu:hover .dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>E-Library</h1>
+        </div>
+        <nav>
+            <a href="my-books.html" id="myBooks" onclick="setActive('myBooks')">My Books</a>
+            <div class="menu">
+                <a href="#" id="browse" onclick="setActive('browse')">Browse</a>
+                <div class="dropdown">
+                    <a href="subjects.html">Subjects</a>
+                    <a href="trending.html">Trending</a>
+                    <a href="book_talks.html">New Arrivals</a>
+                </div>
+            </div>
+            <a href="login.html" id="login" onclick="setActive('login')">Log In</a>
+            <a href="sign-up.html" id="signup" onclick="setActive('signup')">Sign Up</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Subjects</h1>
+        <div class="subjects">
+            <ul>
+                <li><strong>Arts</strong></li>
+                <li><a href="#">Architecture</a></li>
+                <li><a href="#">Art Instruction</a></li>
+                <li><a href="#">Art History</a></li>
+                <li><a href="#">Dance</a></li>
+                <li><a href="#">Design</a></li>
+            </ul>
+            <ul>
+                <li><strong>Animals</strong></li>
+                <li><a href="#">Bears</a></li>
+                <li><a href="#">Cats</a></li>
+                <li><a href="#">Kittens</a></li>
+                <li><a href="#">Dogs</a></li>
+            </ul>
+            <ul>
+                <li><strong>Fiction</strong></li>
+                <li><a href="#">Fantasy</a></li>
+                <li><a href="#">Historical Fiction</a></li>
+                <li><a href="#">Horror</a></li>
+                <li><a href="#">Humor</a></li>
+            </ul>
+            <ul>
+                <li><strong>History</strong></li>
+                <li><a href="#">Ancient Civilization</a></li>
+                <li><a href="#">Archaeology</a></li>
+                <li><a href="#">World War II</a></li>
+            </ul>
+            <ul>
+                <li><strong>Science & Mathematics</strong></li>
+                <li><a href="#">Biology</a></li>
+                <li><a href="#">Chemistry</a></li>
+                <li><a href="#">Mathematics</a></li>
+                <li><a href="#">Programming</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Function to set the active state for buttons
+        function setActive(id) {
+            // Remove active class from all nav links
+            document.querySelectorAll('header nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add active class to the clicked link
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>

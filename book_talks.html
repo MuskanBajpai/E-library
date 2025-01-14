@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Talks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f2c27d;
+            color: #333;
+            padding: 15px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .filters select, .filters input {
+            padding: 8px;
+            font-size: 14px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card p {
+            margin: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        .card .details {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 12px;
+            color: #555;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Internet Archive Book Talks</h1>
+    </header>
+    <div class="container">
+        <div class="intro">
+            <p>A collection of book talks hosted by the Internet Archive</p>
+        </div>
+        <div class="filters">
+            <div>
+                <label for="sort">Sort by: </label>
+                <select id="sort">
+                    <option value="weekly_views">Weekly Views</option>
+                    <option value="title">Title</option>
+                    <option value="date">Date Published</option>
+                    <option value="creator">Creator</option>
+                </select>
+            </div>
+            <div>
+                <label for="search">Search: </label>
+                <input type="text" id="search" placeholder="Search this collection...">
+            </div>
+        </div>
+        <div class="grid">
+            <!-- Book Cards -->
+            <div class="card">
+                <img src="B1.jpg" alt="The History of the Computer">
+                <p>The History of the Computer</p>
+                <div class="details">
+                    <span>85 Views</span>
+                    <span>23 Stars</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="b2.jpg" alt="Against Progress">
+                <p>Against Progress</p>
+                <div class="details">
+                    <span>20 Views</span>
+                    <span>7 Stars</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="b3.jpg" alt="They Don't Represent Us">
+                <p>They Don't Represent Us</p>
+                <div class="details">
+                    <span>17 Views</span>
+                    <span>9 Stars</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="b4.jpg" alt="History Disrupted">
+                <p>History Disrupted</p>
+                <div class="details">
+                    <span>17 Views</span>
+                    <span>9 Stars</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="B5.jpg" alt="The Apple II Age">
+                <p>The Apple II Age</p>
+                <div class="details">
+                    <span>13 Views</span>
+                    <span>8 Stars</span>
+                </div>
+            </div>
+            <!-- Additional Books -->
+            <div class="card">
+                <img src="B7.jpg" alt="The Library: A Fragile History">
+                <p>The Library: A Fragile History</p>
+                <div class="details">
+                    <span>25 Views</span>
+                    <span>12 Stars</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="B8.jpg" alt="Digital Revolution">
+                <p>Digital Revolution</p>
+                <div class="details">
+                    <span>19 Views</span>
+                    <span>10 Stars</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="B9.jpg" alt="Understanding AI">
+                <p>Understanding AI</p>
+                <div class="details">
+                    <span>30 Views</span>
+                    <span>15 Stars</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="B10.jpg" alt="Future of Books">
+                <p>Future of Books</p>
+                <div class="details">
+                    <span>22 Views</span>
+                    <span>11 Stars</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="B11.jpg" alt="Historical Insights">
+                <p>Historical Insights</p>
+                <div class="details">
+                    <span>18 Views</span>
+                    <span>9 Stars</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

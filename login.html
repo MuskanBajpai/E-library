@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:#d3c4a3;
+        }
+
+        .container {
+            display: flex;
+            width: 70%;
+            max-width: 900px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .left {
+            flex: 1;
+            background-color: #e3e3e3;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .left p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+        }
+
+        .right {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .right input[type="text"],
+        .right input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .right .toggle-password {
+            display: inline-block;
+            cursor: pointer;
+            color: #007BFF;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .right .options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .right button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .right button:hover {
+            background-color: #0056b3;
+        }
+
+        .right .signup {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .right .signup a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .right .signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side -->
+        <div class="left">
+            <h3>Log In</h3>
+            <p>Log in to use your free E-library card to borrow digital books .</p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="right">
+            <form>
+                <label for="email">Email</label><br>
+                <a href="#" class="toggle-password">Forgot your email address?</a>
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+                
+<br>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
+                <a href="#">Forgot your Password?</a>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <button type="submit">Log In</button>
+
+                <div class="signup">
+                    Don’t have an account? <a href="sign-up.html">Sign up now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const toggle = document.querySelector('.toggle-password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggle.textContent = 'Hide';
+            } else {
+                passwordField.type = 'password';
+                toggle.textContent = 'Show';
+            }
+        }
+    </script>
+</body>
+</html>

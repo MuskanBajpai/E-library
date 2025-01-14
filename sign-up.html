@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #d3c4a3;
+        }
+
+        .container {
+            display: flex;
+            width: 70%;
+            max-width: 900px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .left {
+            flex: 1;
+            background-color: #e3e3e3;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .left p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+        }
+
+        .right {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .right input[type="text"],
+        .right input[type="email"],
+        .right input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .right .toggle-password {
+            display: inline-block;
+            cursor: pointer;
+            color: #007BFF;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .right .options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .right button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .right button:hover {
+            background-color: #0056b3;
+        }
+
+        .right .signup {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .right .signup a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .right .signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h3>Sign Up</h3>
+            <p>Get your free E-Library card and borrow digital books.</p>
+        </div>
+        <div class="right">
+            <form>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email" required>
+                
+                <label for="screen-name">Screen Name</label><br>
+                <small>Public and cannot be changed later</small>
+                <input type="text" id="screen-name" placeholder="Screen Name" required>
+                
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
+
+                <div class="options">
+                 
+                    <div>
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">I want to receive news, announcements, and resources from E-Library.</label>
+                    </div>
+                </div>
+                
+                <button type="submit">Sign Up</button>
+                
+                <p class="terms">By signing up, you agree to the E-Library.
+                    <a href="#">Terms of Service</a>.</p>
+                
+                <div class="signup">
+                    Already have an account? <a href="login.html">Log In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3e8;
+        }
+
+        header {
+            background-color: #e0e0d1;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+
+        header nav .menu {
+            position: relative;
+        }
+
+        header nav .menu > button {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        header nav .menu .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            z-index: 10;
+        }
+
+        header nav .menu .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        header nav .menu .dropdown a:hover {
+            background-color: #f4f4f4;
+        }
+
+        header nav .menu.active .dropdown {
+            display: block;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .container p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            padding: 8px 15px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #003399;
+        }
+
+        .active-lists {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .list-item {
+            width: 30%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .list-item h3 {
+            font-size: 16px;
+            margin: 0 0 10px;
+        }
+
+        .list-item p {
+            font-size: 14px;
+            margin: 0 0 10px;
+            color: #666;
+        }
+
+        .list-item a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        .list-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>E-Library</h1>
+        <nav>
+            <a href="my-books.html">My Books</a>
+            <div class="menu">
+                <button>Browse</button>
+                <div class="dropdown">
+                    <a href="subjects.html">Subjects</a>
+                    <a href="trending.html">Trending</a>
+                    <a href="libraryExplore.html">Library Explorer</a>
+                    <a href="list.html">Lists</a>
+                    <a href="collection.html">Collections</a>
+                    <a href="Advanced.html">Advanced Search</a>
+                </div>
+            </div>
+            <div class="menu">
+                <button>All</button>
+                <div class="dropdown">
+                    <a href="#">Title</a>
+                    <a href="#">Author</a>
+                    <a href="#">Text</a>
+                    <a href="subjects.html">Subject</a>
+                    <a href="list.html">Lists</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Lists</h2>
+        <p>
+            Create a list of any Subjects, Authors, Works, or specific Editions. Once you've made a list, you can 
+            <strong>watch for updates</strong> or <strong>export</strong> all the editions in a list as HTML, BibTeX, or JSON. 
+            See all your lists and any activity using the "Lists" link on your Account page. <strong>Enjoy!</strong>
+        </p>
+        <p>
+            For the top 2000+ most requested eBooks in California for the print disabled 
+            <a href="#">click here</a>.
+        </p>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Find a list by name">
+            <button onclick="searchLists()">Search</button>
+        </div>
+
+        <h2>Active Lists</h2>
+        <div class="active-lists" id="listsContainer">
+            <div class="list-item">
+                <img src="L3.jpg" alt="Romance to Read">
+                <h3>Romance to Read</h3>
+                <p>from <a href="#">CreativelyLearning</a></p>
+                <p>61 items | Last modified 30 minutes ago</p>
+                <p>No description.</p>
+            </div>
+            <div class="list-item">
+                <img src="L2.jpg" alt="History">
+                <h3>History</h3>
+                <p>from <a href="#">ardiecht</a></p>
+                <p>262 items | Last modified 5 hours ago</p>
+                <p>No description.</p>
+            </div>
+            <div class="list-item">
+                <img src="L1.jpg" alt="Fantasy Books To Read">
+                <h3>Fantasy Books To Read</h3>
+                <p>from <a href="#">CreativelyLearning</a></p>
+                <p>11 items | Last modified 34 minutes ago</p>
+                <p>No description.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dropdown functionality
+        document.querySelectorAll('.menu button').forEach(button => {
+            button.addEventListener('click', () => {
+                const menu = button.parentElement;
+                menu.classList.toggle('active');
+            });
+        });
+
+        // Search functionality
+        function searchLists() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const lists = document.querySelectorAll('.list-item');
+            lists.forEach(list => {
+                const title = list.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(searchInput)) {
+                    list.style.display = 'block';
+                } else {
+                    list.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

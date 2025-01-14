@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library Replica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8eec7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .header .logo span {
+            margin-left: 5px;
+            color: #000;
+        }
+
+        .header .nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header .nav a, .header .nav button {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1em;
+            padding: 5px 10px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .header .nav a:hover, .header .nav button:hover {
+            text-decoration: underline;
+        }
+
+        .header .search {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .header .search input {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .header .search button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .header .search button:hover {
+            background-color: #0056b3;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #007bff;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9em;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .categories {
+            margin: 20px;
+        }
+
+        .categories .category {
+            margin-bottom: 20px;
+        }
+
+        .categories .category .title {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+
+        .categories .category .books {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            gap: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .categories .category .books .book {
+            flex: 0 0 auto;
+            width: 150px;
+            text-align: center;
+        }
+
+        .categories .category .books .book img {
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .categories .category .books .book .title {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">E-<span>LIBRARY</span></div>
+        <nav class="nav">
+            <a href="my-books.html">My Books</a>
+            <div class="dropdown">
+                <button>Browse</button>
+                <div class="dropdown-content">
+                    <a href="subjects.html">Subjects</a>
+                    <a href="trending.html">Trending</a>
+                    <a href="libraryExplore.html">Library Explorer</a>
+                    <a href="list.html">Lists</a>
+                    <a href="collection.html">Collections</a>
+                    <a href="Advanced.html">Advanced Search</a>
+                </div>
+            </div>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <div class="categories">
+        <div class="category">
+            <div class="title">Computer Science, Information & General Works</div>
+            <div class="books">
+                <div class="book">
+                    <img src="cs1.jpg" alt="Book">
+                    <div class="title">General Studies 1</div>
+                </div>
+                <div class="book">
+                    <img src="cs2.jpg" alt="Book">
+                    <div class="title">General Knowledge</div>
+                </div>
+                <div class="book">
+                    <img src="cs3.jpg" alt="Book">
+                    <div class="title">CS & IT</div>
+                </div>
+            </div>
+        </div>
+        <div class="category">
+            <div class="title">Philosophy & Psychology</div>
+            <div class="books">
+                <div class="book">
+                    <img src="1.jpg" alt="Book">
+                    <div class="title">Book A</div>
+                </div>
+                <div class="book">
+                    <img src="2.jpg" alt="Book">
+                    <div class="title">Book B</div>
+                </div>
+                <div class="book">
+                    <img src="3.jpg" alt="Book">
+                    <div class="title">Book C</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="title">Religion</div>
+            <div class="books">
+                <div class="book">
+                    <img src="R1.jpg" alt="Book">
+                    <div class="title">Bhagavad Gita</div>
+                </div>
+                <div class="book">
+                    <img src="R2.jpg" alt="Book">
+                    <div class="title">Bheema And Hanuman</div>
+                </div>
+                <div class="book">
+                    <img src="R3.jpg" alt="Book">
+                    <div class="title">Shree Krishna</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="title">Social Sciences</div>
+            <div class="books">
+                <div class="book">
+                    <img src="B11.jpg" alt="Book">
+                    <div class="title">The Mordern History</div>
+                </div>
+                <div class="book">
+                    <img src="B1.jpg" alt="Book">
+                    <div class="title">History of Computer</div>
+                </div>
+                <div class="book">
+                    <img src="B7.jpg" alt="Book">
+                    <div class="title">History Disrupted</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="title">Language</div>
+            <div class="books">
+                <div class="book">
+                    <img src="e1.jpg" alt="Book">
+                    <div class="title">English P</div>
+                </div>
+                <div class="book">
+                    <img src="e2.jpg" alt="Book">
+                    <div class="title">Hindi</div>
+                </div>
+                <div class="book">
+                    <img src="mar.jpg" alt="Book">
+                    <div class="title">Marathi</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="title">Mathematics</div>
+            <div class="books">
+                <div class="book">
+                    <img src="GK1.jpg" alt="Book">
+                    <div class="title">Math's 1</div>
+                </div>
+                <div class="book">
+                    <img src="e3.jpg" alt="Book">
+                    <div class="title">Math's 5</div>
+                </div>
+                <div class="book">Math's 5
+                    <img src="math.jpg" alt="Book">
+                    <div class="title">Math's 9</div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more categories here -->
+    </div>
+</body>
+</html>

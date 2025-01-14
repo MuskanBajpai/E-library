@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Style of the Short Poem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f4f4ec;
+            padding: 10px 20px;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+        }
+
+        .navbar ul li {
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .navbar ul li a:hover, .navbar ul li a.active {
+            background-color: #007acc;
+            color: white;
+        }
+
+        .browse-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .browse-dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .browse-dropdown a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .navbar ul li:hover .browse-dropdown {
+            display: block;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-bar select, .search-bar input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar a {
+            text-decoration: none;
+            background-color: #007acc;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .search-bar a:hover {
+            background-color: #005fa3;
+        }
+
+        .book-info {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .book-cover {
+            width: 150px;
+        }
+
+        .details {
+            max-width: 700px;
+        }
+
+        .details h1 {
+            font-size: 1.8em;
+        }
+
+        .details a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .details ul li {
+            margin: 5px 0;
+        }
+
+        .actions button {
+            margin: 10px 10px 10px 0;
+            padding: 10px 20px;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .actions button:hover {
+            background-color: #005fa3;
+        }
+
+        .book-locations h2 {
+            margin-top: 20px;
+        }
+
+        .book-locations a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #f4f4ec;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="logo">E-Library</div>
+            <nav>
+                <ul>
+                    <li><a href="my-books.html" id="myBooks" onclick="setActive('myBooks')">My Books</a></li>
+                    <li>
+                        <a href="#" id="browse" onclick="setActive('browse')">Browse</a>
+                        <div class="browse-dropdown">
+                            <a href="subjects.html">Subjects</a>
+                            <a href="trending.html">Trending</a>
+                            <a href="book_details.html">Popular Books</a>
+                            <a href="book_talks.html">New Arrivals</a>
+                        </div>
+                    </li>
+                    <li class="search-bar">
+                        <select>
+                            <option value="all">All</option>
+                            <option value="books">Books</option>
+                            <option value="authors">Authors</option>
+                        </select>
+                        <input type="text" placeholder="Search...">
+                        <a href="#">Search</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="book-info">
+                <img src="RB.jpg" alt="The Style of the Short Poem" class="book-cover">
+                <div class="details">
+                    <h1>The Style of the Short Poem</h1>
+                    <p>by <a href="#">James McMichael</a></p>
+                    <p>This edition doesn't have a description yet. Can you <a href="#">add one?</a></p>
+                    <ul>
+                        <li>Publish Date: 1967</li>
+                        <li>Publisher: Wadsworth Pub. Co.</li>
+                        <li>Language: English</li>
+                        <li>Pages: 86</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button>Borrow</button>
+                <button>Want to Read</button>
+            </div>
+
+            <section class="book-locations">
+                <h2>Check nearby libraries:</h2>
+                <a href="#">WorldCat</a>
+                <h2>Buy this book:</h2>
+                <a href="#">Better World Books</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2024 E-Library</p>
+        </footer>
+    </div>
+
+    <script>
+        function setActive(id) {
+            document.querySelectorAll('header a').forEach(link => link.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>

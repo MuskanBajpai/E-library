@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f2eb;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #e8dcbf;
+            padding: 10px 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        h2 {
+            color: #333;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .intro img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 20px 0;
+        }
+        .links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .links a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .book {
+            text-align: center;
+            flex: 0 0 150px;
+        }
+        .book img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 5px;
+        }
+        .book button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .book button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>E-Library</h1>
+    </header>
+    <div class="container">
+        <div class="intro">
+            <p>Welcome to E-Library Student Library, a School Library designed for a K-12 audience.</p>
+            <img src="STUDENT.jpg" alt="Student Library">
+        </div>
+        <div class="links">
+            <p>By Grade</p>
+            <a href="#">Preschool</a>
+            <a href="#">Kindergarten</a>
+            <a href="#">Grades 1-2</a>
+            <a href="#">Grades 3-4</a>
+            <a href="#">Grades 4-6</a>
+        </div>
+        <div class="links">
+            <p>By Reading Level</p>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+            <a href="#">9</a>
+            <a href="#">10</a>
+            <a href="#">11</a>
+            <a href="#">12</a>
+        </div>
+        <h2>Grades K, 1 & 2</h2>
+        <div class="carousel">
+            <div class="book">
+                <img src="GK0.jpg" alt="Book 1">
+                <p>Summer Camp</p>
+                <button>Borrow</button>
+            </div>
+            <div class="book">
+                <img src="GK1.jpg" alt="Book 2">
+                <p>Math</p>
+                <button>Borrow</button>
+            </div>
+            <div class="book">
+                <img src="GK2.jpg" alt="Book 3">
+                <p>Animal World</p>
+                <button>Borrow</button>
+            </div>
+        </div>
+        <h2>Grades 3, 4 & 5</h2>
+        <div class="carousel">
+            <div class="book">
+                <img src="e1.jpg" alt="Book 4">
+                <p>Looking for Bobowicz</p>
+                <button>English</button>
+            </div>
+            <div class="book">
+                <img src="e2.jpg" alt="Book 5">
+                <p>The Search for Perfection</p>
+                <button>Hindi</button>
+            </div>
+            <div class="book">
+                <img src="e3.jpg" alt="Book 6">
+                <p>Heroe's Valley</p>
+                <button>Maths</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

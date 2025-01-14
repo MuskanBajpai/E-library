@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-button {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 150px;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown" id="dropdown">
+    <div class="dropdown-button">All</div>
+    <div class="dropdown-menu">
+        <a href="all.html">All</a>
+        <a href="my-books.html">My books</a>
+        <a href="libraryExplore.html">libraryExplore</a>
+        <a href="trending.html">Trending</a>
+        <a href="subjects.html">Subject</a>
+        <a href="list.html">Lists</a>
+        <a href="Advanced.html">Advanced</a>
+    </div>
+</div>
+
+<script>
+    const dropdown = document.getElementById('dropdown');
+    const button = dropdown.querySelector('.dropdown-button');
+
+    button.addEventListener('click', () => {
+        dropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+</script>
+
+</body>
+</html>
